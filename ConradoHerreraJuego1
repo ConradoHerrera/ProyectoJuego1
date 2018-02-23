@@ -1,0 +1,737 @@
+//clase del personaje
+class personaje{ //m es la variable que pone en random el color
+int x,y,m;
+String nombre;
+int per;
+int vida=100;
+
+//método de construcción
+personaje(String nombre_){
+
+nombre = nombre_;
+}
+
+int ataque(int i){
+  int a=1;
+  if (i==1){
+   a = round(random(10)); 
+  }
+  if (i==2){
+   a = round(random(5)); 
+  }
+  return a;
+}
+void Per(int per_){//para elegir personaje
+ per = per_ ;
+}
+
+void vida(int x_){
+ vida-=x_;
+ 
+}
+
+void display(int x_, int y_){
+  x = x_;
+  y = y_;
+  pushMatrix();
+translate(x,y);
+switch(per){
+ 
+
+  
+case 0:   //conrado
+
+noStroke();
+fill(#493822);
+rect(5,0,15,5);
+fill(#FFCA8A);//color de piel
+rect(5,5,15,10);
+fill(#A3794D);
+rect(5,5,2.5,2.5);
+fill(#A3794D);
+rect(17.5,5,2.5,2.5);
+fill(#FFCA8A);//color de piel
+rect(10,15,5,5);
+fill(#000000);//color negro playera
+rect(0,20,5,10);//brazo izq
+fill(#FFCA8A);
+rect(0,30,5,15);//fin brazo izq
+fill(#000000);//playera
+rect(20,20,5,10);//brazo der
+fill(#FFCA8A);
+rect(20,30,5,15);//fin brazo der
+fill(#000000);//color playera
+rect(5,20,15,25);
+fill(#707070);//empieza short
+rect(5,45,15,5);
+fill(#707070);
+rect(5,50,5,5);
+fill(#707070);
+rect(15,50,5,5);//end short
+fill(#FFCA8A);//pierna
+rect(5,55,5,15);
+fill(#FFCA8A);//pierna
+rect(15,55,5,15);
+fill(#000000);//tenis
+rect(0,70,10,5);
+fill(#000000);//tenis
+rect(15,70,10,5);
+
+break;
+
+case 1://Chio
+noStroke();
+fill(#000000);
+rect(5,0,15,5);
+fill(#FF888E);
+rect(20,0,2.5,5);
+fill(#000000);
+rect(22.5,0,5,15);
+fill(#FFCA8A);//color de piel
+rect(5,5,15,10);
+fill(#FFCA8A);//color de piel
+rect(10,15,5,5);
+fill(#FF888E);//color negro playera
+rect(0,20,5,10);//brazo izq
+fill(#FFCA8A);
+rect(0,30,5,15);//fin brazo izq
+fill(#FF888E);//playera
+rect(20,20,5,10);//brazo der
+fill(#FFCA8A);
+rect(20,30,5,15);//fin brazo der
+fill(#FF888E);//color playera
+rect(5,20,15,25);
+fill(#FF888E);//empieza short
+rect(5,45,15,5);
+fill(#FF888E);
+rect(5,50,5,20);
+fill(#FF888E);
+rect(15,50,5,20);//end short
+fill(#F0F49A);//tenis
+rect(0,70,10,5);
+fill(#F0F49A);//tenis
+rect(15,70,10,5);
+
+break;
+
+case 2://Hugo
+noStroke();
+fill(#D8D8D8);
+rect(15,0,15,5);
+fill(#FFCA8A);//color de piel
+rect(15,5,15,10);
+fill(#FFCA8A);//color de piel
+rect(20,15,5,5);
+fill(#FF0019);//color negro playera
+rect(0,20,5,10);//brazo izq
+fill(#FFCA8A);
+rect(0,30,5,15);//fin brazo izq
+fill(#FF0019);//playera
+rect(35,20,5,10);//brazo der
+fill(#FFCA8A);
+rect(35,30,5,15);//fin brazo der
+fill(#FF0019);//color playera
+rect(5,20,30,25);
+fill(#000000);//empieza short
+rect(10,45,25,5);
+fill(#000000);
+rect(10,50,5,20);
+fill(#000000);
+rect(30,50,5,20);//end short
+fill(#000000);//tenis
+rect(6,70,10,5);
+fill(#000000);//tenis
+rect(30,70,10,5);
+
+break;
+
+case 3://reptiliano
+
+noStroke();
+fill(#E28DDE);
+rect(5,0,15,5);
+fill(#8BA05D);//color de piel
+rect(5,5,15,10);
+fill(#E5BEE1);
+rect(5,5,2.5,2.5);
+fill(#E5BEE1);
+rect(17.5,5,2.5,2.5);
+fill(#8BA05D);//color de piel
+rect(10,15,5,5);
+fill(#000000);//color negro playera
+rect(0,20,5,10);//brazo izq
+fill(#8BA05D);
+rect(0,30,5,15);//fin brazo izq
+fill(#000000);//playera
+rect(20,20,5,10);//brazo der
+fill(#8BA05D);
+rect(20,30,5,15);//fin brazo der
+fill(round(random(255)),round(random(255)),round(random(255)));//color playera
+rect(5,20,15,25);
+fill(#684C72);//empieza short
+rect(5,45,15,5);
+fill(#684C72);
+rect(5,50,5,5);
+fill(#684C72);
+rect(15,50,5,5);//end short
+fill(#8BA05D);//pierna
+rect(5,55,5,15);
+fill(#8BA05D);//pierna
+rect(15,55,5,15);
+fill(#000000);//tenis
+rect(0,70,10,5);
+fill(#000000);//tenis
+rect(15,70,10,5);
+break;
+
+case 4: //Fer
+noStroke();
+fill(#AA8F6B);
+rect(5,0,15,5);
+fill(#5BA89A);
+rect(20,0,2.5,5);
+fill(#AA8F6B);
+rect(22.5,0,5,15);
+fill(#FFCA8A);//color de piel
+rect(5,5,15,10);
+fill(#FFCA8A);//color de piel
+rect(10,15,5,5);
+fill(#000000);//color negro playera
+rect(0,20,5,10);//brazo izq
+fill(#FFCA8A);
+rect(0,30,5,15);//fin brazo izq
+fill(#000000);//playera
+rect(20,20,5,10);//brazo der
+fill(#FFCA8A);
+rect(20,30,5,15);//fin brazo der
+fill(#000000);//color playera
+rect(5,20,15,25);
+fill(#BABABA);//empieza short
+rect(5,45,15,5);
+fill(#BABABA);
+rect(5,50,5,20);
+fill(#BABABA);
+rect(15,50,5,20);//end short
+fill(#5BA89A);//tenis
+rect(0,70,10,5);
+fill(#5BA89A);//tenis
+rect(15,70,10,5);
+break;
+
+}//end switch display
+popMatrix();
+
+}//end display
+
+}//end class
+
+void mostrarPer(int p_,int x_,int y_){
+int p = p_;
+int x = x_;
+int y = y_;
+pushMatrix();
+translate(x,y);
+switch(p){
+  
+case 0:   //conrado
+
+noStroke();
+fill(#493822);
+rect(5,0,15,5);
+fill(#FFCA8A);//color de piel
+rect(5,5,15,10);
+fill(#A3794D);
+rect(5,5,2.5,2.5);
+fill(#A3794D);
+rect(17.5,5,2.5,2.5);
+fill(#FFCA8A);//color de piel
+rect(10,15,5,5);
+fill(#000000);//color negro playera
+rect(0,20,5,10);//brazo izq
+fill(#FFCA8A);
+rect(0,30,5,15);//fin brazo izq
+fill(#000000);//playera
+rect(20,20,5,10);//brazo der
+fill(#FFCA8A);
+rect(20,30,5,15);//fin brazo der
+fill(#000000);//color playera
+rect(5,20,15,25);
+fill(#707070);//empieza short
+rect(5,45,15,5);
+fill(#707070);
+rect(5,50,5,5);
+fill(#707070);
+rect(15,50,5,5);//end short
+fill(#FFCA8A);//pierna
+rect(5,55,5,15);
+fill(#FFCA8A);//pierna
+rect(15,55,5,15);
+fill(#000000);//tenis
+rect(0,70,10,5);
+fill(#000000);//tenis
+rect(15,70,10,5);
+
+break;
+
+case 1://Chio
+noStroke();
+fill(#000000);
+rect(5,0,15,5);
+fill(#FF888E);
+rect(20,0,2.5,5);
+fill(#000000);
+rect(22.5,0,5,15);
+fill(#FFCA8A);//color de piel
+rect(5,5,15,10);
+fill(#FFCA8A);//color de piel
+rect(10,15,5,5);
+fill(#FF888E);//color negro playera
+rect(0,20,5,10);//brazo izq
+fill(#FFCA8A);
+rect(0,30,5,15);//fin brazo izq
+fill(#FF888E);//playera
+rect(20,20,5,10);//brazo der
+fill(#FFCA8A);
+rect(20,30,5,15);//fin brazo der
+fill(#FF888E);//color playera
+rect(5,20,15,25);
+fill(#FF888E);//empieza short
+rect(5,45,15,5);
+fill(#FF888E);
+rect(5,50,5,20);
+fill(#FF888E);
+rect(15,50,5,20);//end short
+fill(#F0F49A);//tenis
+rect(0,70,10,5);
+fill(#F0F49A);//tenis
+rect(15,70,10,5);
+
+break;
+
+case 2://Hugo
+noStroke();
+fill(#D8D8D8);
+rect(15,0,15,5);
+fill(#FFCA8A);//color de piel
+rect(15,5,15,10);
+fill(#FFCA8A);//color de piel
+rect(20,15,5,5);
+fill(#FF0019);//color negro playera
+rect(0,20,5,10);//brazo izq
+fill(#FFCA8A);
+rect(0,30,5,15);//fin brazo izq
+fill(#FF0019);//playera
+rect(35,20,5,10);//brazo der
+fill(#FFCA8A);
+rect(35,30,5,15);//fin brazo der
+fill(#FF0019);//color playera
+rect(5,20,30,25);
+fill(#000000);//empieza short
+rect(10,45,25,5);
+fill(#000000);
+rect(10,50,5,20);
+fill(#000000);
+rect(30,50,5,20);//end short
+fill(#000000);//tenis
+rect(6,70,10,5);
+fill(#000000);//tenis
+rect(30,70,10,5);
+
+break;
+
+case 3://reptiliano
+
+noStroke();
+fill(#E28DDE);
+rect(5,0,15,5);
+fill(#8BA05D);//color de piel
+rect(5,5,15,10);
+fill(#E5BEE1);
+rect(5,5,2.5,2.5);
+fill(#E5BEE1);
+rect(17.5,5,2.5,2.5);
+fill(#8BA05D);//color de piel
+rect(10,15,5,5);
+fill(#000000);//color negro playera
+rect(0,20,5,10);//brazo izq
+fill(#8BA05D);
+rect(0,30,5,15);//fin brazo izq
+fill(#000000);//playera
+rect(20,20,5,10);//brazo der
+fill(#8BA05D);
+rect(20,30,5,15);//fin brazo der
+fill(round(random(255)),round(random(255)),round(random(255)));//color playera
+rect(5,20,15,25);
+fill(#684C72);//empieza short
+rect(5,45,15,5);
+fill(#684C72);
+rect(5,50,5,5);
+fill(#684C72);
+rect(15,50,5,5);//end short
+fill(#8BA05D);//pierna
+rect(5,55,5,15);
+fill(#8BA05D);//pierna
+rect(15,55,5,15);
+fill(#000000);//tenis
+rect(0,70,10,5);
+fill(#000000);//tenis
+rect(15,70,10,5);
+break;
+
+case 4: //Fer
+noStroke();
+fill(#AA8F6B);
+rect(5,0,15,5);
+fill(#5BA89A);
+rect(20,0,2.5,5);
+fill(#AA8F6B);
+rect(22.5,0,5,15);
+fill(#ffffff);//color de piel
+rect(5,5,15,10);
+fill(#ffffff);//color de piel
+rect(10,15,5,5);
+fill(#000000);//color negro playera
+rect(0,20,5,10);//brazo izq
+fill(#FFCA8A);
+rect(0,30,5,15);//fin brazo izq
+fill(#000000);//playera
+rect(20,20,5,10);//brazo der
+fill(#ffffff);
+rect(20,30,5,15);//fin brazo der
+fill(#000000);//color playera
+rect(5,20,15,25);
+fill(#BABABA);//empieza short
+rect(5,45,15,5);
+fill(#BABABA);
+rect(5,50,5,20);
+fill(#BABABA);
+rect(15,50,5,20);//end short
+fill(#5BA89A);//tenis
+rect(0,70,10,5);
+fill(#5BA89A);//tenis
+rect(15,70,10,5);
+break;
+
+}//end switch display
+popMatrix();
+
+}
+
+
+
+String nombreAtaque(){//para dar nombres variados a los ataques
+ 
+ String frase = "_";
+ int i=round(random(5));
+  switch(i){
+   case 0: frase = "Avienta tu taza de café"; 
+    case 1: frase ="Acaba con las galletas de chispas de chocolate"; 
+    case 2: frase = "Get high a escondidas en el baño de la oficina"; 
+    case 3: frase = "Usa la taza de café que tiene el nombre de alguien más"; 
+    case 4: frase = "Pon reguetón cristiano"; 
+    case 5: frase = "Procastina en Facebook"; 
+    case 6: frase = "Ataque random";
+  }
+  
+  
+ return  frase;
+}
+
+//VARIABLES GLOBALES
+int pantalla;//variable para cambio de pantalla
+personaje p1;
+personaje p2;
+ int vidaP1=100;
+ int vidaP2=100;
+   int ganador=3;
+
+
+void setup(){
+  size(500,400);
+  p1 = new personaje ("Player 1");
+  p2 = new personaje ("Player 2");
+  pantalla = 0;
+
+ 
+}
+
+void draw(){
+  
+  if(pantalla==0){
+    
+    //pantalla de inicio con nombre de juego e instrucciones para iniciar
+    background(round(random(255)),round(random(255)),round(random(255)));
+    textSize(32);
+    text("LAS AVENTURAS",120,100);
+    text("DE LA VIDA",150,150);
+    textSize(100);
+    text("GODIN",100,250);
+    textSize(20);
+    text("Presiona 8 para continuar...",120,350);
+    if(key=='8'){
+      pantalla++;
+    }
+   
+  }
+    
+   if(pantalla==1){
+    //seleccion de personaje 1
+    background(round(random(255)),round(random(255)),round(random(255)));
+    mostrarPer(0,40,70);
+    mostrarPer(1,130,70);
+    mostrarPer(2,230,70);
+    mostrarPer(3,320,70);
+    mostrarPer(0,410,70);
+    noStroke();
+    fill(#000000);
+    rect(0,200,500,200);
+    fill(#ffffff);
+    textSize(20);
+    text("1",60,240);
+    text("2",150,240);
+    text("3",250,240);
+    text("4",340,240);
+    text("5",430,240);
+    
+    
+    textAlign(CENTER);
+    text("Selecciona al jugador 1", width/2, 350);
+   
+    //codigo para elegir personaje
+    
+    if(keyPressed==true){
+    if(key=='1'){//esta función guarda que personaje eligio
+      p1.Per(0);
+    }
+    if(key=='2'){
+    p1.Per(1);
+      
+    }
+    if(key=='3'){
+    p1.Per(2);
+      
+    }
+    if(key=='4'){
+    p1.Per(3);
+      
+    }
+    if(key=='5'){
+   p1.Per(4);
+      
+    
+    }
+ 
+    }//fin keypressed
+    
+     textSize(10);
+    text("Después presiona 9 para continuar...",150,370);
+    if(key=='9'){
+      pantalla++;
+    }
+    
+    }
+    
+    
+    if(pantalla==2){
+     
+   
+    //seleccion de personaje 2
+    background(round(random(255)),round(random(255)),round(random(255)));
+    mostrarPer(0,40,70);
+    mostrarPer(1,130,70);
+    mostrarPer(2,230,70);
+    mostrarPer(3,320,70);
+    mostrarPer(0,410,70);
+    noStroke();
+    fill(#000000);
+    rect(0,200,500,200);
+    fill(#ffffff);
+    textSize(20);
+    text("1",60,240);
+    text("2",150,240);
+    text("3",250,240);
+    text("4",340,240);
+    text("5",430,240);
+    
+    
+    textAlign(CENTER);
+    text("Selecciona al jugador 2", width/2, 350);
+   
+    //codigo para elegir personaje
+    
+    if(keyPressed==true){
+    if(key=='1'){//esta función guarda que personaje eligio
+      p2.Per(0);
+    }
+    if(key=='2'){
+    p2.Per(1);
+     
+    }
+    if(key=='3'){
+    p2.Per(2);
+    
+    }
+    if(key=='4'){
+    p2.Per(3);
+   
+    }
+    if(key=='5'){
+   p2.Per(4);
+  
+    
+    }
+ 
+    }//fin keypressed
+    
+    textSize(10);
+    text("Después presiona 6 para continuar...",150,370);
+    if(key=='6'){
+      pantalla++;
+    }
+    }
+   
+    if(pantalla==3){
+    //pantalla de combate por turnos, intrucciones claras, uno por uno, nivel de vida
+    background(round(random(255)),round(random(255)),round(random(255)));
+    p1.display(130,70);
+    p2.display(320,70);
+    int turno=1;
+     for(int i=1; i<=10; i++){
+    
+     if(turno==1){
+       turno=turnoP1();
+     }
+     if(turno==-1){
+       turno=turnoP2();
+     }
+    
+   break;
+     }//fin ciclo For
+     
+     if(vidaP1 <=0){
+       ganador=2;
+     
+     }
+     if(vidaP2 <=0){
+       ganador=1;
+     
+     }
+     
+     if(ganador==1 || ganador==2){
+     pantalla++;
+     }
+    }
+
+    
+    if(pantalla==4){
+    //jugador ganador y instrucciones para empezar de nuevo
+   background(round(random(255)),round(random(255)),round(random(255)));
+   noStroke();
+    fill(#000000);
+    rect(0,200,500,200);//cuadrado de controles
+    fill(#ffffff);
+    textSize(20);
+    if(ganador == 1){
+    text("Ganó el P1",150,315);
+    p1.display(width/2,height/2);
+    text("PRESIONA 6 PARA REINICIAR",150,370);
+    if(key=='6'){
+      pantalla=0;
+    }
+    
+    }
+    if(ganador == 2){
+    text("Ganó el P2",150,315);
+    p2.display(width/2,height/2);
+    text("PRESIONA 6 PARA REINICIAR",150,370);
+    if(key=='6'){
+      pantalla=0;
+    }
+    }
+     
+
+}
+
+}//fin draw}}
+
+
+int turnoP1()
+{
+  int i=1;
+  noStroke();
+    fill(#000000);
+    rect(0,200,500,200);//cuadrado de controles
+    fill(#ffffff);
+    textSize(20);
+    text("1",130,240);
+    text("2",320,240);
+    text("Turno personaje 1",150,320);
+    text("Elige ataque 1 o 2",150,360);
+    textSize(10);
+    text(nombreAtaque(),60,260);
+    text(nombreAtaque(),290,260);
+     fill(#ffffff);
+    textSize(10);
+    text("vida P1: "+vidaP1,15,330);
+    text("vida P2: "+vidaP2,15,355);
+    
+    if(keyPressed==true){//esto ataca
+    if(key=='1'){
+      vidaP2 = vidaP2 - p1.ataque(1);
+   
+    }
+ 
+    
+    if(key=='2'){
+   vidaP2 = vidaP2 - p1.ataque(2);
+  
+    }
+
+    }
+     textSize(10);
+    text("presiona 9 para cambiar turno...",150,370);
+    if(key=='9'){
+      i=-1;
+     }//fin if keypresse
+     return i;
+}
+
+int turnoP2(){
+  int i=-1;
+  noStroke();
+    fill(#000000);
+    rect(0,200,500,200);//cuadrado de controles
+    fill(#ffffff);
+    textSize(20);
+    text("1",130,240);
+    text("2",320,240);
+    text("Turno personaje 2",150,320);
+    text("Elige ataque 1 o 2",150,360);
+    textSize(10);
+    text(nombreAtaque(),60,260);
+    text(nombreAtaque(),290,260);
+     fill(#ffffff);
+    textSize(10);
+    text("vida P1: "+ vidaP1,15,330);
+    text("vida P2: "+ vidaP2,15,355);
+    
+       if(keyPressed==true){//esto ataca
+    if(key=='1'){
+      vidaP1 = vidaP1 - p2.ataque(1);
+   
+    }
+    
+    if(key=='2'){
+      vidaP1 = vidaP1 - p2.ataque(2);
+   
+    }
+
+    }
+    textSize(10);
+    text("presiona 9 cambiar turno...",150,370);
+    if(key=='9'){
+      i=1;
+     
+     }//fin if keypresse
+     return i;
+}
